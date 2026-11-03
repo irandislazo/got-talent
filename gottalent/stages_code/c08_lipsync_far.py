@@ -382,6 +382,9 @@ def build_song_timeline_lavoz(vp: VideoProject, plantilla_slug: str, personaje_k
     start = max(t + 0.1, min(intro_end + 3.0, half * 0.22))
     targets = [max(start, half * f) for f in (0.30, 0.48, 0.66, 0.83)]
     targets = [max(targets[i], (targets[i-1] + 3.0) if i else 0) for i in range(4)]
+    # NUEVO: siempre un lipsync justo después del intro (solo si cabe sin comprometer los 4 giros).
+    if can_lip():
+        add_lipsync(10.0)
     for idx, j in enumerate(order):
         target = min(targets[idx], half - 2.5)
         # Relleno antes del giro: solo jueces aún no girados o ya girados según estado.
