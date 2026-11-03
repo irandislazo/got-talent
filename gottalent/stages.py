@@ -2,7 +2,6 @@
 
 # Se ejecutan en este orden, en el mismo espacio de nombres (igual que celdas de un kernel).
 SETUP = [
-    1,   # CELDA 1  compilación CUDA
     2,   # CELDA 2  configuración general
     3,   # CELDA 3  utilidades base
     4,   # CELDA 4  estructuras de proyecto
@@ -40,6 +39,7 @@ EXTRA_TABS = [
 
 # Celdas sueltas que se lanzan a demanda con gottalent.tool("nombre")
 TOOLS = {
+    "cuda": 1,   # CELDA 1: compila CUDA y REINICIA el kernel (ejecutar sola, primero)
     "visor": 0, "youtube": 32, "plantillas": 33, "exportar_video": 34, "importar_video": 35,
     "limpiador_qwen": 39, "limpieza": 40,
     "ltx_env_check": 19, "hf_fix_antiguo": 20, "ltx_transformers_pin": 24, "wan2gp_hash_memwatch": 25,

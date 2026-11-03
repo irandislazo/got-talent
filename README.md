@@ -11,6 +11,8 @@ El runner las ejecuta en orden en el mismo espacio global que un kernel (mismos 
 ```python
 import sys; sys.path.insert(0, "/kaggle/working/got-talent"); import gottalent; gottalent.run()
 ```
+**Paso 0 (celda aparte, solo en sesión nueva):** `import sys; sys.path.insert(0,"/kaggle/working/got-talent"); import gottalent; gottalent.tool("cuda")` → compila CUDA y reinicia el kernel (confirma el reinicio). Después ejecuta el paso del `run()`.
+
 Al terminar imprime el enlace público (`share`) de la UI; ábrelo en otra pestaña (no se muestra bajo la celda).
 
 ## Opciones
