@@ -11,7 +11,7 @@ def _slug(s: str) -> str:
     return s[:80] or "video"
 
 def now_slug() -> str:
-    return datetime.datetime.utcnow().strftime("%Y%m%d_%H%M%S")
+    return __import__("datetime").datetime.utcnow().strftime("%Y%m%d_%H%M%S")   # robusto: otras celdas rebindean `datetime` a la clase
 
 @dataclass
 class TimelineClip:
