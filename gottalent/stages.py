@@ -21,6 +21,7 @@ SETUP = [
     18,  # CELDA 17 render final
     21,  # (sin etiqueta) re-enlazar hf_hub_download
     22,  # (sin etiqueta) hf_transfer en venvs
+    99,  # (proyecto) repara torch/torchvision del venv de Qwen si hace falta
     23,  # (sin etiqueta) cerrar Gradio/túneles
 ]  # luego UI = 27 (CELDA 18 v7). El número = posición real en el notebook.
 
@@ -39,6 +40,7 @@ EXTRA_TABS = [
 
 # Celdas sueltas que se lanzan a demanda con gottalent.tool("nombre")
 TOOLS = {
+    "fix_torchvision_qwen": 99,
     "cuda": 1,   # CELDA 1: compila CUDA y REINICIA el kernel (ejecutar sola, primero)
     "visor": 0, "youtube": 32, "plantillas": 33, "exportar_video": 34, "importar_video": 35,
     "limpiador_qwen": 39, "limpieza": 40,
