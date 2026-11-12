@@ -393,6 +393,8 @@ def regenerar_fragmento_dialogo(
             qwen3_tts.unload()
         except Exception:
             pass
+        # FIX: regenerar = clip nuevo. Sin esto, si el texto no cambió (misma sig) el clip viejo se daba por vigente y se reutilizaba.
+        _fpx = _frag_paths(vp, etapa, frag_idx, hablante); _rm(_fpx["mp4"], _fpx["mp4_sig"], _fpx["fb"])
         clip = _dialogo_clip_fragmento(vp, plantilla_slug, personaje_key, etapa,
                                        frag_idx, hablante, ltx_paths, fps, sig)
         if not clip:
